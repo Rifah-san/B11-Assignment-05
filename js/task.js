@@ -110,7 +110,7 @@ function taskNotify(title){
     const text = document.getElementById('msg');
 
     notification.id = ('msg');
-    notification.classList.add('bg-blue-50', 'p-2','my-2','text-sm');
+    notification.classList.add('bg-blue-50', 'p-2','my-2','text-xs','rounded-lg');
 
     const newtime = new Date();
     let currtime = newtime.toLocaleTimeString();
