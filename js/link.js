@@ -7,12 +7,6 @@ document.getElementById('discover-btn')
         document.location.href = "blog.html";
     });
 
-//from blog to index
-
-document.getElementById('back-btn')
-    .addEventListener('click', function () {
-        document.location.href = "index.html";
-    });
 
 // clear history button
 
