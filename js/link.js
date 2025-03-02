@@ -15,9 +15,8 @@ document.getElementById('clear-btn')
     .addEventListener('click', function (event) {
 
         const container = document.getElementById('activ-log');
-        //const msg = document.getElementById('msg');
-        container.remove();
-        event.stopImmediatePropagation();
+        container.innerHTML= '';
+        
 
 
     })
