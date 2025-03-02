@@ -23,6 +23,7 @@ document.getElementById('taskbtn-2')
      
     calTask();
     calTotaltask();
+    taskNotify('Add Dark Mode');
 
 })
 // for task button 3
@@ -36,6 +37,7 @@ document.getElementById('taskbtn-3')
      
     calTask();
     calTotaltask();
+    taskNotify('Optimize Home page');
 
 })
 // for task button 4
@@ -49,6 +51,7 @@ document.getElementById('taskbtn-4')
      
     calTask();
     calTotaltask();
+    taskNotify('Add new emoji');
 
 })
 // for task button 5
@@ -62,6 +65,7 @@ document.getElementById('taskbtn-5')
      
     calTask();
     calTotaltask();
+    taskNotify('Improve Job searching');
 
 })
 // for task button 6
@@ -75,6 +79,7 @@ document.getElementById('taskbtn-6')
      
     calTask();
     calTotaltask();
+    taskNotify('Fix Mobile Button Issue');
 
 })
 
@@ -83,6 +88,10 @@ function calTask(){
     const tasks = document.getElementById('task-count');
     const count = parseInt(tasks.innerText);
     const result = (count - 1);
+
+    if(result === 0){
+        alert('Congratulations! You have successfully completed all task.');
+    }  
 
     tasks.innerText = result;
 }
@@ -96,9 +105,21 @@ function calTotaltask(){
 function taskNotify(title){
     // const taskname = document.querySelectorAll('.task-title');
     const activityLog = document.getElementById('activ-log');
-    const message = 'You have Completed The Task ' + title;
     const notification = document.createElement('p');
-    notification.classList.add('bg-blue-50', 'p-2','my-2');
+    const timecontainer = document.createElement('span');
+    const text = document.getElementById('msg');
+
+    notification.id = ('msg');
+    notification.classList.add('bg-blue-50', 'p-2','my-2','text-sm');
+
+    const newtime = new Date();
+    let currtime = newtime.toLocaleTimeString();
+    timecontainer.innerHTML = currtime;
+
+    let update = currtime;
+
+    const message = 'You have Completed The Task ' + title + ' at ' + update;
+
     notification.innerText = message;
 
     activityLog.appendChild(notification);
